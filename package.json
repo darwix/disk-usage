@@ -1,0 +1,12 @@
+{
+  "name": "disk-usage",
+  "private": true,
+  "scripts": {
+    "start": "node src/scan.js --serve",
+    "test": "node test/treemap.test.js",
+    "build": "node build.js"
+  },
+  "devDependencies": {
+    "rcedit": "^4.0.1"
+  }
+}

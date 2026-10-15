@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Disk Usage</title>
+<meta name="description" content="Where your home folder's space goes, and what's safe to clear." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect x='1' y='1' width='8' height='14' rx='2' fill='%23c9c4f2'/%3E%3Crect x='10' y='1' width='5' height='8' rx='1.5' fill='%23f2c6aa'/%3E%3Crect x='10' y='10' width='5' height='5' rx='1.5' fill='%2369b98a'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" />
+<style>/*CSS*/</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <h1>Disk usage <span id="rootname"></span></h1>
+  <div class="actions"><span class="when" id="when"></span><button id="rescan" class="ghost">Rescan</button></div>
+</header>
+<section class="card stats" aria-label="Summary">
+  <div class="stat"><div class="k">Free after cleanup</div><div class="v" id="free"></div></div>
+  <div class="stat"><div class="k"><span class="dot" style="background:var(--green)"></span>Safe to remove</div><div class="v" id="safe"></div></div>
+  <div class="stat"><div class="k"><span class="dot" style="background:var(--orange)"></span>Needs review</div><div class="v" id="review"></div></div>
+  <div class="stat"><div class="k">Outside home folder</div><div class="v" id="other"></div></div>
+</section>
+<main class="main">
+  <section class="card" aria-label="Folder map">
+    <div class="head">
+      <div><h2>Where the space goes</h2><div class="sub">Each tile is a folder, sized by what it holds. Click one to go inside.</div></div>
+      <div class="seg" role="group" aria-label="Highlight"><button class="on" data-m="cat">Category</button><button data-m="clean">Cleanup</button></div>
+    </div>
+    <nav class="crumbs" aria-label="Path"><div id="crumbs"></div><span class="note" id="note" role="status"></span><button class="open" id="openbtn">Open in Explorer</button><span class="size" id="rootsize"></span></nav>
+    <div id="map"></div>
+    <div class="legend">
+      <span><i class="c-docs"></i>Documents &amp; media</span><span><i class="c-dev"></i>Dev tools &amp; other</span>
+      <span><i class="c-code"></i>Code projects</span><span><i class="c-sdk"></i>SDKs</span>
+      <span><i class="c-ai"></i>AI models</span><span><i class="c-pkg"></i>Package caches</span>
+    </div>
+  </section>
+  <aside class="card rec" aria-label="Cleanup">
+    <div class="head"><h2>What you can clear</h2><div class="sub">Tick what to delete. Expand a row to see every folder it removes.</div></div>
+    <div class="list" id="list"></div>
+    <div class="foot">
+      <div class="sel"><b id="selsize"></b> across <span id="selcount"></span></div>
+      <div class="btns"><button class="link" id="selsafe">Safe only</button><button id="del">Delete</button></div>
+    </div>
+    <div class="msg" id="msg" role="status"></div>
+  </aside>
+</main>
+</div>
+<script>/*TREEMAP*/</script>
+<script>/*DATA*/</script>
+<script>/*APP*/</script>
+</body>
+</html>

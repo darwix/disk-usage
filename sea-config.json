@@ -1,0 +1,11 @@
+{
+  "main": "src/scan.js",
+  "output": "dist/sea-prep.blob",
+  "disableExperimentalSEAWarning": true,
+  "assets": {
+    "ui/template.html": "src/ui/template.html",
+    "ui/style.css": "src/ui/style.css",
+    "ui/app.js": "src/ui/app.js",
+    "treemap.js": "src/treemap.js"
+  }
+}
