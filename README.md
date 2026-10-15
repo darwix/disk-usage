@@ -6,7 +6,7 @@ Scans your home folder, draws a treemap of the biggest folders, and lists things
 
 ## Use
 
-Download `DiskUsage.exe` from the latest [build run](../../actions) and double-click it. It opens in its own window; closing the window quits the app.
+Download `DiskUsage.exe` from the [latest release](../../releases/latest) and double-click it. It opens in its own window; closing the window quits the app.
 
 - **Map**: click a folder to zoom in, use the path bar to go back. **Open … in Explorer** opens the folder you're viewing.
 - **Clean up**: tick items and press **Delete** twice to confirm. Deletes are permanent (they skip the Recycle Bin).
@@ -24,6 +24,8 @@ npm test
 npm run build    # dist/DiskUsage.exe via Node single executable applications
 node src/scan.js D:\some\folder   # scan another folder, writes out/report.html
 ```
+
+To release: `git tag v1.2.3 && git push origin v1.2.3`. CI builds the exe and attaches it to a GitHub Release.
 
 ```
 src/scan.js        scanner, recommendations, local server
